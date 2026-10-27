@@ -22,7 +22,7 @@ if it's installed, but there is a small built-in reader/writer as well.
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/cluster-spectroscopy-toolkit.git
+git clone https://github.com/prasanna4264/cluster-spectroscopy-toolkit.git
 cd cluster-spectroscopy-toolkit
 pip install -e .                      # or just run the scripts from the repo folder
 
