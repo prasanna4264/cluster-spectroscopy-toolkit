@@ -1,0 +1,20 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[test]"
+      - run: pytest -q
+      - run: |
+          python examples/make_mock_data.py
+          python scripts/extract_mask.py examples/data/mock_mask_2spec.fits out/spectra
+          python scripts/pack_marz.py out/marz.fits out/spectra/*.fits --clean
+          python scripts/run_clusters.py examples/data/mock_galaxies.csv out/clusters.csv --centres examples/data/mock_centres.csv --n-mc 200

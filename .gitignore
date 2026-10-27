@@ -1,0 +1,17 @@
+# data and outputs: keep real data out of the repository
+*.fits
+*.fit
+*.fits.gz
+*.mz
+*.npy
+*.png
+*.pdf
+out/
+examples/data/
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+.DS_Store

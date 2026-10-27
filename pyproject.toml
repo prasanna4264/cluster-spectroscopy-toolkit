@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clusterspec"
+version = "0.1.0"
+description = "Multi-slit spectral extraction and galaxy-cluster kinematics (membership, dynamics, Dressler-Shectman test)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Prasanna Adhikari"}]
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "pandas", "matplotlib"]
+
+[project.optional-dependencies]
+fits = ["astropy"]
+test = ["pytest"]
+
+[tool.setuptools]
+packages = ["clusterspec"]
